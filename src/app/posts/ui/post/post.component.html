@@ -1,0 +1,9 @@
+<button
+  type="button"
+  class="rounded-xl h-full border border-black shadow-md w-full p-1 justify-center items-center flex transition-all duration-300 ease-in-out hover:bg-black hover:text-white hover:border-black"
+  [attr.aria-label]="ariaLabel()"
+  [ngClass]="isActive() ? 'bg-pink-700 border-pink-700 text-white' : ''"
+  (click)="onClick()"
+>
+  <span class="truncate">{{ activePropertyValue() }}</span>
+</button>

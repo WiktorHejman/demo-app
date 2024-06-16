@@ -1,0 +1,17 @@
+@if (store.isLoading()) {
+  <app-loader></app-loader>
+} @else {
+  <p class="text-center p-4 mb-4 border-b border-gray-200 font-bold select-none">
+    @if (activeId(); as activeId) {
+      Active id: {{ activeId }}
+    } @else {
+        None of the element has been selected
+      }
+  </p>
+
+  <div class="grid grid-cols-10 gap-4 h-full p-4">
+    @for (post of store.posts(); track post.id ) {
+      <app-post [post]="post" [(activeId)]="activeId"></app-post>
+    }
+  </div>
+}
